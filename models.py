@@ -1,5 +1,4 @@
-from pydantic import BaseModel , field_validator
-from typing import list 
+from pydantic import BaseModel , field_validator 
 
 class LineItem(BaseModel):
     description:str
@@ -11,7 +10,7 @@ class Invoice(BaseModel):
     supplier:str
     date:str
     items: list[LineItem]
-    total_amount = float
+    total_amount : float
 
     @field_validator("total_amount")
     @classmethod
